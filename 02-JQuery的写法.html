@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        /* window.onload = function(){
+            // 1、方法函数化
+        } */
+        /* $(function(){
+            // alert("相当于window.onload");
+            $("h1").click(function(){
+                alert("我被点击了！");
+            })
+            $("h1").mouseout(function(){
+                this.style.backgroundColor = "red";
+            })
+            $("h1").mouseover(function(){
+                this.style.backgroundColor = "blue";
+            })
+        }) */
+
+        // 2、链式操作
+        $(function(){
+            $("h1").click(function(){
+                alert("我被点击了！")
+            })
+            .css("backgroundColor", "orange")
+            .mouseover(function(){
+                this.style.backgroundColor = "red";
+            })
+            .mouseout(function(){
+                this.style.backgroundColor = "blue";
+            })
+        })
+
+        // 取值赋值合体
+        $(function(){
+            /* 
+            innerHTML -> html()
+            value     -> val()
+        */
+            // alert($("#div1").html());
+            // $("#div1").html("<h2>我是新赋值的内容</h2>");
+
+            alert($("input").val());
+            $("input").val("Hi World");
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Hello World！</h1>
+    <div id="div1">
+        <em>em</em>
+        div文本
+    </div>
+    <input type="text" value="helloworld">
+</body>
+<!-- <script>
+    window.onload = function(){
+        alert("Hello World");
+    }
+</script> -->
+</html>

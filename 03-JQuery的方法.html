@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $("div").filter(".box").css("backgroundColor", "red");
+            // $("div").not(".box").css("backgroundColor", "red");
+            $("div").has(".box").css("backgroundColor", "orange");
+
+            // 一次性修改多条属性
+            $("#div1").attr({
+                id: "div2",
+                title: "yyy",
+                class: "xxx"
+            })
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div>div2<strong class="box"></strong></div>
+
+    <div id="div1" title="xxx" class="box">div</div>
+</body>
+</html>

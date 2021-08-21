@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #div1{width: 200px;height: 200px;border: solid 1px black;position: relative;display: none;}
+        #close{position: absolute;right: 0;top: 0;}
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        // 计算left和top值
+        $(function(){
+            var top = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true))/2;
+            var left = ($(window).width() - $("#div1").outerWidth(true))/2;
+
+            $("#div1").css({
+                left: left,
+                top: top
+            })
+        })
+
+        // 添加事件
+        $(window).on("scroll resize", function(){
+            $(function(){
+                var top = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true))/2;
+                var left = ($(window).width() - $("#div1").outerWidth(true))/2;
+
+                $("#div1").css({
+                    left: left,
+                    top: top
+                })
+            })
+        })
+
+
+
+
+        $(function(){
+            $("#issue").click(function(){
+                $("#div1").css("display", "block");
+            })
+            $("#close").click(function(){
+                $("#div1").css("display", "none");
+            })
+        })
+    </script>
+</head>
+<body style="height: 1000px;">
+    <button id="issue">点击发布</button>
+    <div id="div1">
+        <input type="text" placeholder="输入用户名">
+        <input type="password" placeholder="密码">
+        <div id="close">X</div>
+    </div>
+</body>
+</html>

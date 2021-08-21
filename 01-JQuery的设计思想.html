@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        window.onload = function(){
+            // $("#div1").css("backgroundColor", "red");
+            // $(".box").css("backgroundColor", "red");
+            // TagName
+            // $("ul li").css("backgroundColor", "red");
+
+            // $("[name=hi]").css("backgroundColor", "blue");
+
+            // 表达式写法
+            $("ul li:first").css("backgroundColor", "green");
+            $("ul li:last").css("backgroundColor", "green");
+
+            // 其他高级写法
+            // 奇数
+            $("ul li:even").css("backgroundColor", "gray");
+
+            // 偶数
+            $("ul li:odd").css("backgroundColor", "green");
+
+
+            // 多种筛选方式
+            // 指定下标
+            // $("ol li:eq(3)").css("backgroundColor", "blue");
+            $("ol li").eq(3).css("backgroundColor", "blue");
+
+            $("div.box").css("backgroundColor", "black");
+
+            $("li").filter(".box").css("backgroundColor", "yellow");
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <input type="text" class="txt" name="hi">
+    <div class="box">div2</div>
+    <ul class="ul1">
+        <li class="list">6</li>
+        <li class="list">6</li>
+        <li class="box">6</li>
+        <li class="list">6</li>
+        <li class="box">6</li>
+    </ul>
+    <ol>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+    </ol>
+</body>
+</html>
