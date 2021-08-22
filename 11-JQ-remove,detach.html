@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #div1{width: 100px;;height: 100px;background-color: red;}
+        #div2{width: 200px;;height: 200px;border: solid 1px black;}
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+
+
+        $(function(){
+            // remove
+            /* $("#div1").hover(function(){
+                $(this).css("backgroundColor", "orange")
+            },function(){
+                $(this).css("backgroundColor", "blue")
+            })
+
+            $("button").click(function(){
+                var node = $("#div1").remove();
+                node.appendTo($("#div2"))
+            }) */
+
+            // detach
+            $("#div1").hover(function(){
+                $(this).css("backgroundColor", "orange")
+            },function(){
+                $(this).css("backgroundColor", "blue")
+            })
+
+            $("button").click(function(){
+                var node = $("#div1").detach();
+                node.appendTo($("#div2"))
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>删除节点</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
